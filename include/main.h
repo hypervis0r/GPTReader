@@ -14,6 +14,8 @@
 
 #define INDEX_TO_GPT_ENTRY(start_entry, gpt_header, index) ( start_entry + (gpt_header->gpt_entry_size * index) )
 
+#define GPT_HEADER_MAGIC "EFI PART"
+
 struct GPT_TABLE_HEADER
 {
 	UCHAR magic[8];

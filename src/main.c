@@ -54,6 +54,12 @@ DWORD GetGptHeader(struct GPT_TABLE_HEADER* gpt_header)
 
 	CloseHandle(hDisk);
 
+	/*
+		Verify we grabbed the GPT header using the header magic
+	*/
+	if (memcmp(gpt_header->magic, GPT_HEADER_MAGIC, sizeof(gpt_header->magic)) != 0)
+		return -1;
+
 	return 0;
 }
 
