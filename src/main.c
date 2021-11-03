@@ -13,7 +13,7 @@ DWORD GetGptHeader(struct GPT_TABLE_HEADER* gpt_header)
 	*/
 	hDisk = CreateFileW(
 		L"\\\\.\\PhysicalDrive0",
-		GENERIC_READ | GENERIC_WRITE,
+		GENERIC_READ,
 		FILE_SHARE_READ | FILE_SHARE_WRITE,
 		0,
 		OPEN_EXISTING,
@@ -78,7 +78,7 @@ DWORD GetGptTableEntryArray(struct GPT_TABLE_HEADER* gpt_header, struct GPT_TABL
 	*/
 	hDisk = CreateFileW(
 		L"\\\\.\\PhysicalDrive0",
-		GENERIC_READ | GENERIC_WRITE,
+		GENERIC_READ,
 		FILE_SHARE_READ | FILE_SHARE_WRITE,
 		0,
 		OPEN_EXISTING,
